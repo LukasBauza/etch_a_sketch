@@ -1,0 +1,12 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: stretch;
+}
+
+div {
+    background-color: red;
+    border: black;
+    display: flex;
+    flex-grow: 1;
+}
