@@ -1,6 +1,7 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: stretch;
 }
 
@@ -9,4 +10,8 @@ div {
     border: black;
     display: flex;
     flex-grow: 1;
+}
+
+button {
+	width: 10vh;
 }
