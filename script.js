@@ -1,19 +1,20 @@
-var col_count = 16;
-var row_count = 16;
-// var row_array = new Array(row_count);
-// var square_array = new Array(square_count);
-
 var div = document.querySelector("div");
 
-for (let c = 0; c < col_count - 1; c++) {
-    console.log("Col: " + c);
+for (let c = 0; c < 16; c++) {
     var col_clone = div.cloneNode();
+    col_clone.style.flexDirection = "column";
+	for (let r = 0; r < 16; r++) {
+		var row_clone = div.cloneNode();
+		row_clone.classList.add("tile");
+		col_clone.appendChild(row_clone);
+	}
     div.appendChild(col_clone);
 }
 
-for (let r = 0; r < row_count; r++) {
-    console.log("Row: " + r);
-    var row_clone = div.cloneNode(true);
-    row_clone.style.flexDirection = "column";
-    document.body.appendChild(row_clone);
+var tiles = document.getElementsByClassName("tile");
+
+for (var i = 0; i < tiles.length; i++) {
+	tiles[i].addEventListener("mouseover", function(e) {
+		this.style.backgroundColor = "black";
+	});
 }
